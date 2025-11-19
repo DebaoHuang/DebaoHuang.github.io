@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,578 +7,773 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-51ZPZTZTY5');
     </script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>Debao Huang</title>
-    <meta name="thumbnail" content="images/DebaoHuang.jpg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debao Huang - PhD Candidate</title>
+    <meta name="description" content="Debao Huang - PhD Candidate in Geospatial Data Analytics at The Ohio State University.">
     <meta name="author" content="Debao Huang">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Modern Tech Palette */
+            --bg-color: #f3f4f6;
+            --card-bg: rgba(255, 255, 255, 0.65); /* Glass effect base */
+            --card-border: rgba(255, 255, 255, 0.4);
+            --text-main: #111827;
+            --text-light: #4b5563;
+            --accent: #2563eb; 
+            --accent-gradient: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius: 16px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --card-bg: rgba(30, 41, 59, 0.7);
+                --card-border: rgba(255, 255, 255, 0.05);
+                --text-main: #f8fafc;
+                --text-light: #94a3b8;
+                --accent: #38bdf8;
+                --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            /* Animated Background Mesh */
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(147, 51, 234, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(236, 72, 153, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        /* Typography & Links */
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        /* Fancy Link Underline Effect */
+        .paper-links a::after, .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: var(--accent-gradient);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        
+        .paper-links a:hover::after, .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Glassmorphism Navbar */
+        nav {
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+            margin: 0 auto;
+            width: 90%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            nav { background: rgba(15, 23, 42, 0.6); }
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-main); }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 20px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 100px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-name {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p { font-size: 1.05rem; margin-bottom: 16px; }
+
+        .hero-image { position: relative; }
+        
+        .hero-image img {
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 30px;
+            transform: rotate(-3deg);
+            box-shadow: var(--shadow-lg);
+            border: 4px solid var(--card-bg);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover img { transform: rotate(0deg) scale(1.02); }
+
+        /* Social Buttons */
+        .social-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+        
+        .social-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(4px);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* Headings */
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        h2::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 32px;
+            background: var(--accent-gradient);
+            border-radius: 4px;
+        }
+
+        /* Cards (Research & News) */
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius);
+            padding: 0;
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            overflow: hidden;
+            height: 260px;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .paper-img {
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* FIX: Use 'contain' for BOTH images and videos to show full thumbnail */
+        .paper-img img, 
+        .paper-img video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures the whole image scales to fit the box */
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .paper-card:hover .paper-img img {
+            transform: scale(1.05);
+        }
+
+        .paper-content { 
+            padding: 24px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .paper-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 6px;
+            display: block;
+            color: var(--text-main);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .paper-title:hover {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .paper-authors {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .paper-venue {
+            font-style: italic;
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        .paper-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        /* Scrollable News Section */
+        .news-scroll-wrapper {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 24px;
+            max-height: 300px;
+            overflow-y: auto;
+            box-shadow: inset 0 -10px 20px -10px rgba(0,0,0,0.05);
+        }
+
+        .news-scroll-wrapper::-webkit-scrollbar { width: 8px; }
+        .news-scroll-wrapper::-webkit-scrollbar-track { background: transparent; }
+        .news-scroll-wrapper::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 4px; }
+        .news-scroll-wrapper::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+        .news-list {
+            list-style: none;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .news-list::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .news-item {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .news-item:last-child { margin-bottom: 0; }
+
+        .news-item::after {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            background: var(--bg-color);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px var(--bg-color);
+        }
+
+        .news-date {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        /* Video Containers for Demos */
+        .video-container {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--card-border);
+            background: #000;
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 100px;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--card-border);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .hero-name { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .paper-card { grid-template-columns: 1fr; height: auto; }
+            .paper-img { height: 220px; }
+            .service-grid { grid-template-columns: 1fr !important; }
+            section { padding: 80px 0; }
+            .paper-title, .paper-desc { -webkit-line-clamp: unset; }
+        }
+    </style>
 </head>
 
 <body>
-    <table
-        style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-            <tr style="padding:0px">
-                <td style="padding:0px">
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr style="padding:0px">
-                                <td style="padding:2.5%;width:63%;vertical-align:middle">
-                                    <p class="name" style="text-align: center;">
-                                        Debao Huang
-                                    </p>
-                                    <p>
-                                        I'm a PhD candidate in the <a
-                                            href="https://u.osu.edu/qin.324">Geospatial Data Analytics
-                                            Group</a> at <a href="https://www.osu.edu/">The Ohio State University</a>.
-                                    </p>
-                                    <p>
-                                        I started in January 2021 and am supervised by <a
-                                            href="https://u.osu.edu/qin.324/">Prof. Rongjun Qin</a>. My research
-                                        interests lie in 3D reconstruction and uncertainty quantification. I am working on
-                                        multiple projects funded by
-                                        <a href="https://www.nre.navy.mil">ONR</a>, 
-                                        <a href="https://www.iarpa.gov/research-programs/wriva">IARPA</a>, 
-                                        <a href="https://midwesthub.afresearchlab.com">AFRL</a> and 
-                                        <a href="https://www.nsf.gov">NSF</a>
-                                        to solve 3D geometry problems and tasks.
-                                    </p>
-                                    <p>
-                                        Keywords: Photogrammetry, Computer Vision, Remote Sensing, Machine Learning, Artificial Intelligence, Structure-from-Motion (SfM), 3D Gaussian Splatting (3DGS), Uncertainty Modeling.
-                                    </p>
-                                    <p style="text-align:center">
-                                        <a href="mailto:huang.3918@osu.edu">Email</a>&nbsp;/&nbsp;
-                                        <a
-                                            href="https://scholar.google.com/citations?user=OkHkN_kAAAAJ&hl=en&oi=ao">Scholar</a>&nbsp;/&nbsp;
-                                        <a href="https://github.com/DebaoHuang">Github</a>&nbsp;/&nbsp;
-                                        <a href="https://linkedin.com/in/debao-huang">LinkedIn</a>
-                                    </p>
-                                </td>
-                                <td style="padding:2.5%;width:40%;max-width:40%">
-                                    <img style="width:60%;max-width:60%;object-fit: cover; border-radius: 50%;"
-                                        alt="profile photo" src="images/DebaoHuang.jpg">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
 
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    <h2><b>News</b></h2>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table
-                        style="width:100%;border:0px;border-spacing:20px 0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="width:25%;vertical-align:top;">
-                                    <p>
-                                        03/2025
-                                    </p>
-                                </td>
-                                <td style="width:75%;vertical-align:top">
-                                    <p>
-                                        Our new papers of dynamic 3D Gaussian Splatting and uncertainty quantification, got
-                                        accepted to <a href="https://gsw2025.ae/">ISPRS Geospatial Week 2025</a>.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:25%;vertical-align:top;">
-                                    <p>
-                                        11/2024
-                                    </p>
-                                </td>
-                                <td style="width:75%;vertical-align:top">
-                                    <p>
-                                        I was honored to be an <a href="https://bmvc2024.org/people/reviewers/">outstanding reviewer</a> for the 35th British Machine Vision Conference (BMVC 2024).
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:25%;vertical-align:top;">
-                                    <p>
-                                        04/2024
-                                    </p>
-                                </td>
-                                <td style="width:75%;vertical-align:top">
-                                    <p>
-                                        Our new paper of incorporating motion constraints in Bundle Adjustment of Structure-from-Motion 
-                                        for uncalibrated multi-camera systems, got published in <a href="https://doi.org/10.1016/j.isprsjprs.2024.04.023">ISPRS Journal of Photogrammetry and Remote Sensing</a>.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:25%;vertical-align:top;">
-                                    <p>
-                                        04/2024
-                                    </p>
-                                </td>
-                                <td style="width:75%;vertical-align:top">
-                                    <p>
-                                        Our new paper of proposing a new scheme to scale up NeRF for large-scale aerial images, got published in <a href="https://doi.org/10.1111/phor.12498">The Photogrammetric Record</a>.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:25%;vertical-align:top;">
-                                    <p>
-                                        06/2023
-                                    </p>
-                                </td>
-                                <td style="width:75%;vertical-align:top">
-                                    <p>
-                                        Our new paper of the preliminary study of uncertainty quantification in MVS, got
-                                        accepted to <a href="https://gsw2023.com/">ISPRS Geospatial Week 2023</a>.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:25%;vertical-align:top">
-                                    <p>
-                                        05/2022
-                                    </p>
-                                </td>
-                                <td style="width:75%;vertical-align:top">
-                                    <p>
-                                        Our new paper of baseline constraint in BA for SfM using uncalibrated
-                                        multi-camera systems, got accepted to <a
-                                            href="https://www.isprs2022-nice.com/">ISPRS Congress 2022</a>.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:25%;vertical-align:top">
-                                    <p>
-                                        04/2022
-                                    </p>
-                                </td>
-                                <td style="width:75%;vertical-align:top">
-                                    <p>
-                                        Our new paper of evaluation of PlanetScope images for 3D reconstruction and
-                                        change detection, got published in <a
-                                            href="https://doi.org/10.1080/15481603.2022.2060595">GIScience & Remote
-                                            Sensing Journal</a>.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:25%;vertical-align:top">
-                                    <p>
-                                        08/2021
-                                    </p>
-                                </td>
-                                <td style="width:75%;vertical-align:top">
-                                    <p>
-                                        Our new paper of 3D change detection of a building deconstruction event using 
-                                        UAV images, got published in <a
-                                            href="https://doi.org/10.1080/17538947.2021.1966527">International Journal of Digital Earth</a>.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <nav class="reveal">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Debao Huang</a>
+            <div class="nav-links">
+                <a href="#news">News</a>
+                <a href="#research">Research</a>
+                <a href="#software">Software</a>
+                <a href="#services">Services</a>
+            </div>
+        </div>
+    </nav>
 
-
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    <h2><b>My Research</b></h2>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src='images/motion_constraint.png' width=100%>
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://doi.org/10.1016/j.isprsjprs.2024.04.023">
-                                        <span class="papertitle">BUNDLE ADJUSTMENT WITH MOTION CONSTRAINTS FOR UNCALIBRATED MULTI-CAMERA SYSTEMS AT THE GROUND LEVEL</span>
-                                    </a>
-                                    <br>
-                                    <strong>Debao Huang</strong>,
-                                    Rongjun Qin,
-                                    Mostafa Elhashash
-                                    <br>
-                                    <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, 2024
-                                    <br>
-                                    <a href="https://doi.org/10.1016/j.isprsjprs.2024.04.023">paper</a> | <a href="https://youtu.be/PZBTL2nrwWs">video</a>
-                                    <p></p>
-                                    <p>
-                                        This paper derives novel geometric constraints in BA of SfM pipeline that assumes minimal knowns about the uncalibrated 
-                                        multi-camera systems at the ground level. Our proposed constraints are effective in correcting topographical errors (i.e., trajectory drifts) of the reconstruction.
-                                        It benefits the broader use of photogrammetry with low-cost and non-expert use cases to generate 3D products with improved accuracy.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src='images/nerf.png' width=100%>
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://doi.org/10.1111/phor.12498">
-                                        <span class="papertitle">MULTI-TILING NEURAL RADIANCE FIELD (NERF)—GEOMETRIC ASSESSMENT ON LARGE-SCALE AERIAL DATASETS</span>
-                                    </a>
-                                    <br>
-                                    Ningli Xu,
-                                    Rongjun Qin,
-                                    <strong>Debao Huang</strong>,
-                                    Fabio Remondino
-                                    <br>
-                                    <em>The Photogrammetric Record</em>, 2024
-                                    <br>
-                                    <a href="https://doi.org/10.1111/phor.12498">paper</a> | <a href="https://www.youtube.com/watch?v=8z3xfjRdSs8">video</a> | <a href="https://github.com/GDAOSU/multicamera_nerf">code</a>
-                                    <p></p>
-                                    <p>
-                                        This paper provides multi-camera tiling (MCT) strategy to
-                                        scale the NeRF on large-scale aerial datasets and a
-                                        thorough geometry assessment of NeRF.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src='images/uncertainty.png' width=100%>
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://doi.org/10.5194/isprs-annals-X-1-W1-2023-517-2023">
-                                        <span class="papertitle">A CRITICAL ANALYSIS OF INTERNAL RELIABILITY FOR
-                                            UNCERTAINTY QUANTIFICATION OF DENSE IMAGE MATCHING IN MULTI-VIEW
-                                            STEREO</span>
-                                    </a>
-                                    <br>
-                                    <strong>Debao Huang</strong>,
-                                    Rongjun Qin
-                                    <br>
-                                    <em>ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial
-                                        Information Sciences</em>, 2023
-                                    <br>
-                                    <a href="https://doi.org/10.5194/isprs-annals-X-1-W1-2023-517-2023">paper</a>
-                                    <p></p>
-                                    <p>
-                                        This paper presents preliminary study of metrics in the dense matching and MVS
-                                        fusion
-                                        process, to learn heuristic correlation for propagating errors to the final
-                                        point clouds.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src='images/BA.png' width=100%>
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://doi.org/10.5194/isprs-annals-V-2-2022-17-2022">
-                                        <span class="papertitle">CONSTRAINED BUNDLE ADJUSTMENT FOR STRUCTURE
-                                            FROM MOTION USING UNCALIBRATED MULTI-CAMERA SYSTEMS</span>
-                                    </a>
-                                    <br>
-                                    <strong>Debao Huang</strong>,
-                                    Mostafa Elhashash,
-                                    Rongjun Qin
-                                    <br>
-                                    <em>ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial
-                                        Information Sciences</em>, 2022
-                                    <br>
-                                    <a href="https://doi.org/10.5194/isprs-annals-V-2-2022-17-2022">paper</a>
-                                    <p></p>
-                                    <p>
-                                        This paper proposes a bundle adjustment (BA) solution for
-                                        uncalibrated cameras with overlapping views by incorporating a
-                                        so-called baseline constraint which builds the link between two
-                                        cameras that are static to each other.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src='images/planet.png' width=100%>
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://doi.org/10.1080/15481603.2022.2060595">
-                                        <span class="papertitle">AN EVALUATION OF PLANETSCOPE IMAGES FOR 3D
-                                            RECONSTRUCTION AND CHANGE DETECTION – EXPERIMENTAL VALIDATIONS WITH
-                                            CASE STUDIES</span>
-                                    </a>
-                                    <br>
-                                    <strong>Debao Huang</strong>,
-                                    Yang Tang,
-                                    Rongjun Qin
-                                    <br>
-                                    <em>GIScience & Remote Sensing</em>, 2022
-                                    <br>
-                                    <a href="https://doi.org/10.1080/15481603.2022.2060595">paper</a> | <a href="https://youtu.be/lRoquNhMjxk">video</a>
-                                    <p></p>
-                                    <p>
-                                        This paper comprehensively evaluates the 3D potential of PlanetScope images by
-                                        performing accuracy analysis for both 3D reconstruction and change detection.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src='images/change.jpg' width=100%>
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://doi.org/10.1080/17538947.2021.1966527">
-                                        <span class="papertitle">A VOLUMETRIC CHANGE DETECTION FRAMEWORK USING
-                                            UAV OBLIQUE PHOTOGRAMMETRY – A CASE STUDY OF ULTRA-HIGH-RESOLUTION
-                                            MONITORING OF PROGRESSIVE BUILDING COLLAPSE</span>
-                                    </a>
-                                    <br>
-                                    Ningli Xu,
-                                    <strong>Debao Huang</strong>,
-                                    Shuang Song,
-                                    Xiao Ling,
-                                    Chris Strasbaugh,
-                                    Alper Yilmaz,
-                                    Halil Sezen,
-                                    Rongjun Qin
-                                    <br>
-                                    <em>International Journal of Digital Earth</em>, 2021
-                                    <br>
-                                    <a href="https://doi.org/10.1080/17538947.2021.1966527">paper</a> | <a href="https://youtu.be/uLaLV6Q5El0">video</a>
-                                    <p></p>
-                                    <p>
-                                        This paper presents an unmanned aerial vehicle
-                                        (UAV) based fine-scale 3D change detection and monitoring of progressive
-                                        collapse performance of a building during a demolition event.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    <h2><b>Software and Demo</b></h2>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;text-align: left;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    1. <b>Photogrammetry toolkit</b>: full 3D reconstruction pipeline from SfM, MVS, meshing to texturing.
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;text-align: middle;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    <video width="100%" controls="controls">
-                                        <source src="images/software.mp4#t=0.1" type="video/mp4">
-                                    </video>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;text-align: left;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    2. <b>Quantification framework</b>: estimating and encoding error covariance of 3D points, visualization in desktop GUI and VR. 
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;text-align: middle;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    <video width="100%" controls="controls">
-                                        <source src="images/uncertainty.mp4#t=0.1" type="video/mp4">
-                                    </video>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;text-align: middle;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    <video width="100%" controls="controls">
-                                        <source src="images/vr.mp4#t=0.1" type="video/mp4">
-                                    </video>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;text-align: left;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    3. <b>Dynamic urban scene modeling</b>: dynamic 3D Gaussian Splatting from UAV full motion videos. 
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;text-align: middle;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    <video width="100%" controls="controls">
-                                        <source src="images/4dgs.mp4#t=0.1" type="video/mp4">
-                                    </video>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    <h2><b>Academic Services</b></h2>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;text-align: left;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    I serve as a peer reviewer for:
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    <li>IEEE Transactions on Geoscience and Remote Sensing</li>
-                                    <li>International Journal of Applied Earth Observation and Geoinformation</li>
-                                    <li>Photogrammetric Engineering & Remote Sensing</li>
-                                    <li>Remote Sensing</li>
-                                    <li>Applied Sciences</li>
-                                    <li>IEEE Transactions on Circuits and Systems for Video Technology</li>
-                                    <li>International Journal of Digital Earth</li>
-                                    <li>British Machine Vision Conference (BMVC 2024) -- <a href="https://bmvc2024.org/people/reviewers/">Outstanding Reviewer</a></li>
-                                    <li>Conference on Neural Information Processing Systems (NeurIPS 2024)</li>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    <h2><b>Professional Services</b></h2>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;text-align: left;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    I am a Federal Aviation Administration (FAA) certificated remote pilot, which allows me to collect UAV data for both research and commercial purposes in the US. 
-                                    I have conducted many data collection and surveying tasks that are utilized in our projects and research. The following map shows the flight missions I have conducted 
-                                    on campus. 
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;text-align: middle;">
-                        <td style="padding:20px;width:25%;vertical-align:middle">
-                            <img src='images/liltchi.png' width=100%>
-                        </td>
-                        
-                    </table>
-
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</body>
-
-<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-        <tr>
-            <td style="padding:0px">
-                <br>
-                <p style="text-align:center;font-size:small;">
-                    © 2025 Debao Huang, last update: 05/09/2025
+    <div class="container">
+        
+        <section class="hero reveal">
+            <div class="hero-text">
+                <h1 class="hero-name">Debao Huang</h1>
+                <p>
+                    I'm a PhD candidate in the <a href="https://u.osu.edu/qin.324" style="font-weight: 600;">Geospatial Data Analytics Group</a> at <a href="https://www.osu.edu/" style="font-weight: 600;">The Ohio State University</a>.
                 </p>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                <p style="margin-top:15px;">
+                    I started in January 2021, supervised by <a href="https://u.osu.edu/qin.324/">Prof. Rongjun Qin</a>. My research focuses on <strong>3D reconstruction</strong> and <strong>uncertainty quantification</strong>. 
+                    I am working on projects funded by <a href="https://www.nre.navy.mil">ONR</a>, <a href="https://www.iarpa.gov/research-programs/wriva">IARPA</a>, <a href="https://midwesthub.afresearchlab.com">AFRL</a>, and <a href="https://www.nsf.gov">NSF</a> to solve complex 3D geometry problems.
+                </p>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 20px;">
+                    <strong>Keywords:</strong> Photogrammetry, Computer Vision, Remote Sensing, Machine Learning, AI, Structure-from-Motion (SfM), 3D Gaussian Splatting (3DGS), Uncertainty Modeling.
+                </p>
 
+                <div class="social-links">
+                    <a href="mailto:huang.3918@osu.edu" class="social-btn"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://scholar.google.com/citations?user=OkHkN_kAAAAJ&hl=en&oi=ao" class="social-btn"><i class="fas fa-graduation-cap"></i> Scholar</a>
+                    <a href="https://github.com/DebaoHuang" class="social-btn"><i class="fab fa-github"></i> Github</a>
+                    <a href="https://linkedin.com/in/debao-huang" class="social-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/DebaoHuang.jpg" alt="Debao Huang">
+            </div>
+        </section>
+
+        <section id="news" class="reveal">
+            <h2>News</h2>
+            <div class="news-scroll-wrapper">
+                <ul class="news-list">
+                    <li class="news-item">
+                        <div class="news-date">03/2025</div>
+                        <div>Our new papers on dynamic 3D Gaussian Splatting and uncertainty quantification were accepted to <a href="https://gsw2025.ae/">ISPRS Geospatial Week 2025</a>.</div>
+                    </li>
+                    <li class="news-item">
+                        <div class="news-date">11/2024</div>
+                        <div>I was honored to be an <a href="https://bmvc2024.org/people/reviewers/">outstanding reviewer</a> for the 35th British Machine Vision Conference (BMVC 2024).</div>
+                    </li>
+                    <li class="news-item">
+                        <div class="news-date">04/2024</div>
+                        <div>Paper on incorporating motion constraints in Bundle Adjustment published in <a href="https://doi.org/10.1016/j.isprsjprs.2024.04.023">ISPRS Journal of Photogrammetry and Remote Sensing</a>.</div>
+                    </li>
+                    <li class="news-item">
+                        <div class="news-date">04/2024</div>
+                        <div>Paper on scaling up NeRF for large-scale aerial images published in <a href="https://doi.org/10.1111/phor.12498">The Photogrammetric Record</a>.</div>
+                    </li>
+                    <li class="news-item">
+                        <div class="news-date">06/2023</div>
+                        <div>Paper on uncertainty quantification in MVS accepted to <a href="https://gsw2023.com/">ISPRS Geospatial Week 2023</a>.</div>
+                    </li>
+                    <li class="news-item">
+                        <div class="news-date">05/2022</div>
+                        <div>Paper on baseline constraint in BA for SfM accepted to <a href="https://www.isprs2022-nice.com/">ISPRS Congress 2022</a>.</div>
+                    </li>
+                    <li class="news-item">
+                        <div class="news-date">04/2022</div>
+                        <div>Paper on PlanetScope images for 3D reconstruction published in <a href="https://doi.org/10.1080/15481603.2022.2060595">GIScience & Remote Sensing Journal</a>.</div>
+                    </li>
+                    <li class="news-item">
+                        <div class="news-date">08/2021</div>
+                        <div>Paper on 3D change detection of building deconstruction published in <a href="https://doi.org/10.1080/17538947.2021.1966527">International Journal of Digital Earth</a>.</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="research" class="reveal">
+            <h2>Selected Research</h2>
+
+            <div class="paper-card">
+                <div class="paper-img">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/4dgs.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="paper-content">
+                    <a href="https://doi.org/10.5194/isprs-archives-XLVIII-G-2025-649-2025" class="paper-title">Dynamic Urban Scene Modeling with 3D Gaussian Splatting from UAV Full Motion Videos</a>
+                    <div class="paper-authors"><strong>Debao Huang</strong>, Hanyang Liu, Ningli Xu, Rongjun Qin</div>
+                    <div class="paper-venue">ISPRS Archives, 2025</div>
+                    <div class="paper-links">
+                        <a href="https://doi.org/10.5194/isprs-archives-XLVIII-G-2025-649-2025"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                    <p class="paper-desc">
+                        This work presents a method for reconstructing dynamic urban scenes from UAV full-motion videos using 3D Gaussian Splatting, effectively handling moving objects in large-scale environments.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="paper-card">
+                <div class="paper-img">
+                    <img src="images/gpm.png" alt="Uncertainty 2025" onerror="this.style.display='none'">
+                </div>
+                <div class="paper-content">
+                    <a href="https://doi.org/10.5194/isprs-archives-XLVIII-G-2025-657-2025" class="paper-title">Uncertainty Estimation for Photogrammetric Point Clouds of UAV Imagery</a>
+                    <div class="paper-authors"><strong>Debao Huang</strong>, Rongjun Qin</div>
+                    <div class="paper-venue">ISPRS Archives, 2025</div>
+                    <div class="paper-links">
+                        <a href="https://doi.org/10.5194/isprs-archives-XLVIII-G-2025-657-2025"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                    <p class="paper-desc">
+                        This paper focuses on estimating the uncertainty of point clouds derived from UAV imagery to improve the reliability of photogrammetric reconstructions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-img">
+                    <img src="images/motion_constraint.png" alt="Motion Constraint">
+                </div>
+                <div class="paper-content">
+                    <a href="https://doi.org/10.1016/j.isprsjprs.2024.04.023" class="paper-title">Bundle Adjustment with Motion Constraints for Uncalibrated Multi-Camera Systems at the Ground Level</a>
+                    <div class="paper-authors"><strong>Debao Huang</strong>, Rongjun Qin, Mostafa Elhashash</div>
+                    <div class="paper-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2024</div>
+                    <div class="paper-links">
+                        <a href="https://doi.org/10.1016/j.isprsjprs.2024.04.023"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://youtu.be/PZBTL2nrwWs"><i class="fab fa-youtube"></i> Video</a>
+                    </div>
+                    <p class="paper-desc">
+                        This paper derives novel geometric constraints in BA of SfM pipeline that assumes minimal knowns about the uncalibrated multi-camera systems at the ground level. Our proposed constraints are effective in correcting topographical errors (i.e., trajectory drifts) of the reconstruction.
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-img">
+                    <img src="images/nerf.png" alt="NeRF">
+                </div>
+                <div class="paper-content">
+                    <a href="https://doi.org/10.1111/phor.12498" class="paper-title">Multi-Tiling Neural Radiance Field (NeRF)—Geometric Assessment on Large-Scale Aerial Datasets</a>
+                    <div class="paper-authors">Ningli Xu, Rongjun Qin, <strong>Debao Huang</strong>, Fabio Remondino</div>
+                    <div class="paper-venue">The Photogrammetric Record, 2024</div>
+                    <div class="paper-links">
+                        <a href="https://doi.org/10.1111/phor.12498"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://www.youtube.com/watch?v=8z3xfjRdSs8"><i class="fab fa-youtube"></i> Video</a>
+                        <a href="https://github.com/GDAOSU/multicamera_nerf"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                    <p class="paper-desc">
+                        This paper provides multi-camera tiling (MCT) strategy to scale the NeRF on large-scale aerial datasets and a thorough geometry assessment of NeRF.
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-img">
+                    <img src="images/uncertainty.png" alt="Uncertainty">
+                </div>
+                <div class="paper-content">
+                    <a href="https://doi.org/10.5194/isprs-annals-X-1-W1-2023-517-2023" class="paper-title">A Critical Analysis of Internal Reliability for Uncertainty Quantification of Dense Image Matching in Multi-View Stereo</a>
+                    <div class="paper-authors"><strong>Debao Huang</strong>, Rongjun Qin</div>
+                    <div class="paper-venue">ISPRS Annals, 2023</div>
+                    <div class="paper-links">
+                        <a href="https://doi.org/10.5194/isprs-annals-X-1-W1-2023-517-2023"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                    <p class="paper-desc">
+                        This paper presents preliminary study of metrics in the dense matching and MVS fusion process to learn heuristic correlation for propagating errors to the final point clouds.
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-img">
+                    <img src="images/BA.png" alt="BA">
+                </div>
+                <div class="paper-content">
+                    <a href="https://doi.org/10.5194/isprs-annals-V-2-2022-17-2022" class="paper-title">Constrained Bundle Adjustment for Structure from Motion using Uncalibrated Multi-Camera Systems</a>
+                    <div class="paper-authors"><strong>Debao Huang</strong>, Mostafa Elhashash, Rongjun Qin</div>
+                    <div class="paper-venue">ISPRS Annals, 2022</div>
+                    <div class="paper-links">
+                        <a href="https://doi.org/10.5194/isprs-annals-V-2-2022-17-2022"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                    <p class="paper-desc">
+                        Proposed a bundle adjustment (BA) solution for uncalibrated cameras with overlapping views by incorporating a so-called baseline constraint which builds the link between two cameras that are static to each other.
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-img">
+                    <img src="images/planet.png" alt="PlanetScope">
+                </div>
+                <div class="paper-content">
+                    <a href="https://doi.org/10.1080/15481603.2022.2060595" class="paper-title">An Evaluation of PlanetScope Images for 3D Reconstruction and Change Detection</a>
+                    <div class="paper-authors"><strong>Debao Huang</strong>, Yang Tang, Rongjun Qin</div>
+                    <div class="paper-venue">GIScience & Remote Sensing, 2022</div>
+                    <div class="paper-links">
+                        <a href="https://doi.org/10.1080/15481603.2022.2060595"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://youtu.be/lRoquNhMjxk"><i class="fab fa-youtube"></i> Video</a>
+                    </div>
+                    <p class="paper-desc">
+                        Comprehensively evaluates the 3D potential of PlanetScope images by performing accuracy analysis for both 3D reconstruction and change detection.
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-img">
+                    <img src="images/change.jpg" alt="Change Detection">
+                </div>
+                <div class="paper-content">
+                    <a href="https://doi.org/10.1080/17538947.2021.1966527" class="paper-title">A Volumetric Change Detection Framework Using UAV Oblique Photogrammetry</a>
+                    <div class="paper-authors">Ningli Xu, <strong>Debao Huang</strong>, Shuang Song, et al.</div>
+                    <div class="paper-venue">International Journal of Digital Earth, 2021</div>
+                    <div class="paper-links">
+                        <a href="https://doi.org/10.1080/17538947.2021.1966527"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://youtu.be/uLaLV6Q5El0"><i class="fab fa-youtube"></i> Video</a>
+                    </div>
+                    <p class="paper-desc">
+                        Presents an unmanned aerial vehicle (UAV) based fine-scale 3D change detection and monitoring of progressive collapse performance of a building during a demolition event.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="software" class="reveal">
+            <h2>Software and Demo</h2>
+
+            <div class="demo-block">
+                <div class="demo-title">1. Photogrammetry Toolkit</div>
+                <p style="margin-bottom:12px; color: var(--text-light);">Full 3D reconstruction pipeline from SfM, MVS, meshing to texturing.</p>
+                <div class="video-container">
+                    <video controls loop preload="metadata">
+                        <source src="images/software.mp4#t=0.1" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-title">2. Quantification Framework</div>
+                <p style="margin-bottom:12px; color: var(--text-light);">Estimating and encoding error covariance of 3D points, visualization in desktop GUI and VR.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="video-container">
+                        <video controls loop preload="metadata">
+                            <source src="images/uncertainty.mp4#t=0.1" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-container">
+                        <video controls loop preload="metadata">
+                            <source src="images/vr.mp4#t=0.1" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <style>
+                    @media (max-width: 768px) {
+                        #software .demo-block > div[style*="grid"] { grid-template-columns: 1fr !important; }
+                    }
+                </style>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-title">3. Dynamic Urban Scene Modeling</div>
+                <p style="margin-bottom:12px; color: var(--text-light);">Dynamic 3D Gaussian Splatting from UAV full motion videos.</p>
+                <div class="video-container">
+                    <video controls loop preload="metadata">
+                        <source src="images/4dgs.mp4#t=0.1" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="reveal">
+            <h2>Services</h2>
+            
+            <div class="service-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div class="paper-card" style="display: block; padding: 30px; height: auto;">
+                    <h3 style="font-size:1.3rem; margin-bottom:15px; color: var(--text-main);">Academic Services</h3>
+                    <p style="margin-bottom: 15px; font-weight: 600;">I serve as a peer reviewer for:</p>
+                    <ul class="service-list" style="list-style: none;">
+                        <li>IEEE Transactions on Geoscience and Remote Sensing</li>
+                        <li>International Journal of Applied Earth Observation and Geoinformation</li>
+                        <li>Photogrammetric Engineering & Remote Sensing</li>
+                        <li>Remote Sensing</li>
+                        <li>Applied Sciences</li>
+                        <li>IEEE Transactions on Circuits and Systems for Video Technology</li>
+                        <li>International Journal of Digital Earth</li>
+                        <li style="margin-top: 10px; font-weight: 600; color: var(--accent);">British Machine Vision Conference (BMVC 2024) -- <a href="https://bmvc2024.org/people/reviewers/">Outstanding Reviewer</a></li>
+                        <li>Conference on Neural Information Processing Systems (NeurIPS 2024)</li>
+                    </ul>
+                </div>
+
+                <div class="paper-card" style="display: block; padding: 30px; height: auto;">
+                    <h3 style="font-size:1.3rem; margin-bottom:15px; color: var(--text-main);">Professional Services</h3>
+                    <p style="margin-bottom: 15px;">
+                        I am a Federal Aviation Administration (FAA) certificated remote pilot, allowing me to collect UAV data for research and commercial purposes in the US.
+                    </p>
+                    <img src="images/liltchi.png" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-sm);" alt="Flight Map">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Debao Huang. Last update: 11/19/2025</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation Logic
+        const observerOptions = {
+            threshold: 0.15, // Trigger when 15% of element is visible
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
 </html>
