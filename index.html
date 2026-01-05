@@ -443,6 +443,19 @@
             display: block;
         }
 
+        .visitor-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            display: inline-block;
+            min-width: 300px;
+            max-width: 100%;
+            margin-top: 10px;
+        }
+
         /* Footer */
         footer {
             margin-top: 100px;
@@ -767,6 +780,15 @@
         </section>
 
     </div>
+
+    <section id="visitors" class="reveal">
+        <div class="container" style="text-align: center;">
+            <h2>Visitor Map</h2>
+            <div class="visitor-card">
+                <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=iELzQL63jtQ9LGQ6qgck1nr55GLwlTUH8zbYW1ISVOw&cl=2563eb&w=a"></script>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2025 Debao Huang. Last update: 12/23/2025</p>
