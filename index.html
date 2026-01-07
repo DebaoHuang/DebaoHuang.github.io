@@ -716,12 +716,24 @@
 
             <div class="demo-block">
                 <div class="demo-title">3. Dynamic Urban Scene Modeling</div>
-                <p style="margin-bottom:12px; color: var(--text-light);">Dynamic 3D Gaussian Splatting from UAV full motion videos.</p>
-                <div class="video-container">
-                    <video controls loop preload="metadata">
-                        <source src="images/4dgs.mp4#t=0.1" type="video/mp4">
-                    </video>
+                <p style="margin-bottom:12px; color: var(--text-light);">Dynamic 3D Gaussian Splatting from UAV full motion videos. Left: original video. Right: rendered video from a novel view.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="video-container">
+                        <video controls loop preload="metadata">
+                            <source src="images/4dgs_ori.mp4#t=0.1" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-container">
+                        <video controls loop preload="metadata">
+                            <source src="images/4dgs.mp4#t=0.1" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
+                <style>
+                    @media (max-width: 768px) {
+                        #software .demo-block > div[style*="grid"] { grid-template-columns: 1fr !important; }
+                    }
+                </style>
             </div>
         </section>
 
