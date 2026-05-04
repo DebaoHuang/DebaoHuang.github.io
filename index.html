@@ -62,9 +62,9 @@
 
     <style>
         :root {
-            --bg-color: #fafafa;
+            --bg-color: #ffffff;
             --card-bg: #ffffff;
-            --card-border: #e5e7eb;
+            --card-border: #d1d5db;
             --text-main: #111827;
             --text-light: #4b5563;
             --accent: #2563eb;
@@ -574,12 +574,28 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: var(--radius);
-            padding: 24px;
+            padding: 28px;
             box-shadow: var(--shadow-sm);
-            display: inline-block;
-            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            min-width: 320px;
             max-width: 100%;
-            margin-top: 10px;
+            margin-top: 24px;
+        }
+
+        .visitor-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-light);
+        }
+
+        .visitor-counter img {
+            display: block;
+            height: 22px;
         }
 
         /* Footer */
@@ -753,7 +769,7 @@
                     </li>
                     <li class="news-item">
                         <div class="news-date">11/2024</div>
-                        <div>I was honored to be an <a href="https://bmvc2024.org/people/reviewers/">outstanding reviewer</a> for the 35th British Machine Vision Conference (BMVC 2024).</div>
+                        <div>I was honored to be an <a href="https://bmvc2024.org/people/reviewers/#:~:text=Debao,Huang">outstanding reviewer</a> for the 35th British Machine Vision Conference (BMVC 2024).</div>
                     </li>
                     <li class="news-item">
                         <div class="news-date">04/2024</div>
@@ -1005,7 +1021,7 @@
                         <li>Applied Sciences</li>
                         <li>IEEE Transactions on Circuits and Systems for Video Technology</li>
                         <li>International Journal of Digital Earth</li>
-                        <li>British Machine Vision Conference (BMVC 2024) -- <a href="https://bmvc2024.org/people/reviewers/" style="font-weight: 600; color: var(--accent);">Outstanding Reviewer</a></li>
+                        <li>British Machine Vision Conference (BMVC 2024) -- <a href="https://bmvc2024.org/people/reviewers/#:~:text=Debao,Huang" style="font-weight: 600; color: var(--accent);">Outstanding Reviewer</a></li>
                         <li>Conference on Neural Information Processing Systems (NeurIPS 2024)</li>
                     </ul>
                 </div>
@@ -1022,15 +1038,11 @@
 
         <section id="visitors" class="reveal" style="display: flex; flex-direction: column; align-items: center;">
             <div class="visitor-card">
-                <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=300&t=m&d=iELzQL63jtQ9LGQ6qgck1nr55GLwlTUH8zbYW1ISVOw&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
-
-                <div style="margin: 15px 0 10px 0; border-top: 1px solid rgba(0,0,0,0.1);"></div>
-
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
-                    <a href="https://hits.sh/debaohuang.github.io/" target="_blank" rel="noopener noreferrer">
-                        <img alt="Total page views" src="https://hits.sh/debaohuang.github.io.svg?style=flat-square&label=TOTAL%20VIEWS&extraCount=2445&color=2d78ad" loading="lazy" decoding="async"/>
-                    </a>
-                </div>
+                <span class="visitor-label">Visitors</span>
+                <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=300&t=m&d=iELzQL63jtQ9LGQ6qgck1nr55GLwlTUH8zbYW1ISVOw&co=2563eb&cmo=2563eb&cmn=2563eb&ct=ffffff'></script>
+                <a class="visitor-counter" href="https://hits.sh/debaohuang.github.io/" target="_blank" rel="noopener noreferrer">
+                    <img alt="Total page views" src="https://hits.sh/debaohuang.github.io.svg?style=flat&label=Page%20views&extraCount=2445&color=2563eb&labelColor=111827" loading="lazy" decoding="async"/>
+                </a>
             </div>
         </section>
 
