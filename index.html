@@ -16,9 +16,47 @@
     <meta name="description" content="Debao Huang - PhD Candidate in Geospatial Data Analytics at The Ohio State University.">
     <meta name="author" content="Debao Huang">
 
+    <link rel="canonical" href="https://debaohuang.github.io/">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Debao Huang - PhD Candidate">
+    <meta property="og:description" content="PhD Candidate in Geospatial Data Analytics at The Ohio State University. Research on 3D reconstruction, uncertainty quantification, and vision foundation models.">
+    <meta property="og:url" content="https://debaohuang.github.io/">
+    <meta property="og:image" content="https://debaohuang.github.io/images/DebaoHuang.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Debao Huang - PhD Candidate">
+    <meta name="twitter:description" content="PhD Candidate in Geospatial Data Analytics at The Ohio State University.">
+    <meta name="twitter:image" content="https://debaohuang.github.io/images/DebaoHuang.jpg">
+
+    <meta name="theme-color" content="#f3f4f6" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="images/DebaoHuang.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Debao Huang",
+        "jobTitle": "PhD Candidate",
+        "url": "https://debaohuang.github.io/",
+        "image": "https://debaohuang.github.io/images/DebaoHuang.jpg",
+        "email": "mailto:huang.3918@osu.edu",
+        "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "The Ohio State University",
+            "url": "https://www.osu.edu/"
+        },
+        "sameAs": [
+            "https://scholar.google.com/citations?user=OkHkN_kAAAAJ&hl=en&oi=ao",
+            "https://linkedin.com/in/debao-huang"
+        ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -46,6 +84,23 @@
             --accent: #38bdf8;
             --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
         }
+
+        :root { color-scheme: light dark; }
+
+        /* Skip-to-content link for keyboard users */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            z-index: 2000;
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus { top: 16px; }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
@@ -97,6 +152,8 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 24px;
+            padding-left: max(24px, env(safe-area-inset-left));
+            padding-right: max(24px, env(safe-area-inset-right));
         }
 
         /* Glassmorphism Navbar */
@@ -156,8 +213,12 @@
             font-size: 1.2rem;
             display: none; /* Hidden on desktop */
             align-items: center;
+            justify-content: center;
             transition: color 0.3s;
             padding: 0;
+            min-width: 44px;
+            min-height: 44px;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .mobile-menu-btn:hover {
@@ -173,9 +234,13 @@
             font-size: 1.1rem;
             display: flex;
             align-items: center;
+            justify-content: center;
             transition: color 0.3s;
             padding: 0;
             margin-left: 10px;
+            min-width: 44px;
+            min-height: 44px;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .theme-toggle:hover {
@@ -216,7 +281,7 @@
         }
 
         .hero-name {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 16px;
@@ -247,6 +312,7 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             padding: 10px 20px;
+            min-height: 44px;
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 600;
@@ -257,6 +323,7 @@
             align-items: center;
             gap: 8px;
             backdrop-filter: blur(4px);
+            -webkit-tap-highlight-color: transparent;
         }
 
         .social-btn:hover {
@@ -335,7 +402,7 @@
         }
 
         .paper-img {
-            background: #000;
+            background: var(--card-bg);
             position: relative;
             overflow: hidden;
             height: 100%;
@@ -345,11 +412,11 @@
             justify-content: center;
         }
 
-        .paper-img img, 
+        .paper-img img,
         .paper-img video {
             width: 100%;
             height: 100%;
-            object-fit: contain; 
+            object-fit: contain;
             transition: transform 0.5s ease;
             display: block;
         }
@@ -384,9 +451,21 @@
             color: var(--text-light);
             font-size: 0.9rem;
             margin-bottom: 6px;
-            white-space: nowrap; 
-            overflow: hidden;
-            text-overflow: ellipsis;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .demo-block { margin-bottom: 32px; }
+        .demo-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+        .demo-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         .paper-venue {
@@ -480,6 +559,22 @@
             display: block;
         }
 
+        .service-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+
         .visitor-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -538,25 +633,58 @@
             }
             
             .hero { flex-direction: column-reverse; text-align: center; }
-            .hero-name { font-size: 2.5rem; }
             .paper-card { grid-template-columns: 1fr; height: auto; }
             .paper-img { height: 220px; }
-            .service-grid { grid-template-columns: 1fr !important; }
             section { padding: 80px 0; }
-            .paper-title, .paper-desc { -webkit-line-clamp: unset; }
+            .paper-title, .paper-desc { -webkit-line-clamp: unset; line-clamp: unset; }
             .hardware-grid { grid-template-columns: 1fr; }
+            .demo-grid-2 { grid-template-columns: 1fr; }
+        }
+
+        /* Tablet (iPad portrait, small laptops) — 769px to 1024px */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .paper-card { grid-template-columns: 240px 1fr; min-height: 220px; }
+            .hero { gap: 32px; }
+            .hero-image img { width: 200px; height: 200px; }
+            .hardware-card { height: 320px; }
+        }
+
+        /* Small phones — ≤480px */
+        @media (max-width: 480px) {
+            .hero { padding-top: 110px; padding-bottom: 60px; gap: 30px; }
+            .hero-image img { width: 180px; height: 180px; }
+            h2 { font-size: 1.6rem; margin-bottom: 32px; }
+            .container { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+            section { padding: 60px 0 !important; }
+            .paper-content { padding: 20px; }
+            .news-scroll-wrapper { padding: 18px; }
+        }
+
+        /* Respect users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+            .paper-card:hover { transform: none; }
+            .social-btn:hover { transform: none; }
         }
     </style>
 </head>
 
 <body>
 
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <nav class="reveal" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">Debao Huang</a>
+            <a href="#main" class="nav-logo">Debao Huang</a>
             
-            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-links">
+                <i aria-hidden="true" class="fas fa-bars"></i>
             </button>
 
             <div class="nav-links" id="nav-links">
@@ -566,14 +694,14 @@
                 <a href="#hardware">Hardware</a>
                 <a href="#services">Services</a>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i><span class="theme-text">Dark Mode</span>
+                    <i aria-hidden="true" class="fas fa-moon"></i><span class="theme-text">Dark Mode</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <div class="container">
-        
+    <div class="container" id="main">
+
         <section class="hero reveal">
             <div class="hero-text">
                 <h1 class="hero-name">Debao Huang</h1>
@@ -589,14 +717,14 @@
                 </p>
 
                 <div class="social-links">
-                    <a href="mailto:huang.3918@osu.edu" class="social-btn"><i class="fas fa-envelope"></i> Email</a>
-                    <a href="https://scholar.google.com/citations?user=OkHkN_kAAAAJ&hl=en&oi=ao" class="social-btn"><i class="fas fa-graduation-cap"></i> Scholar</a>
-                    <a href="https://linkedin.com/in/debao-huang" class="social-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="files/debao_resume.pdf" class="social-btn" target="_blank"><i class="fas fa-file"></i> Resume</a>
+                    <a href="mailto:huang.3918@osu.edu" class="social-btn"><i aria-hidden="true" class="fas fa-envelope"></i> Email</a>
+                    <a href="https://scholar.google.com/citations?user=OkHkN_kAAAAJ&hl=en&oi=ao" class="social-btn"><i aria-hidden="true" class="fas fa-graduation-cap"></i> Scholar</a>
+                    <a href="https://linkedin.com/in/debao-huang" class="social-btn"><i aria-hidden="true" class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="files/debao_resume.pdf" class="social-btn" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="fas fa-file"></i> Resume</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/DebaoHuang.jpg" alt="Debao Huang">
+                <img src="images/DebaoHuang.jpg" alt="Portrait of Debao Huang" decoding="async" fetchpriority="high">
             </div>
         </section>
 
@@ -604,6 +732,10 @@
             <h2>News</h2>
             <div class="news-scroll-wrapper">
                 <ul class="news-list">
+                    <li class="news-item">
+                        <div class="news-date">05/2026</div>
+                        <div>Our paper, <strong>Uncertainty Quantification Framework for Aerial and UAV Photogrammetry through Error Propagation</strong>, has been accepted to the <a href="https://www.sciencedirect.com/journal/isprs-journal-of-photogrammetry-and-remote-sensing">ISPRS Journal of Photogrammetry and Remote Sensing</a>! We propose a self-calibrating framework that propagates errors through both the SfM and MVS stages to quantify per-point uncertainty in aerial and UAV photogrammetric point clouds. Check out the <a href="https://arxiv.org/abs/2507.13486">paper</a> and <a href="https://github.com/GDAOSU/UncertaintyQuantification">code</a> for more details.</div>
+                    </li>
                     <li class="news-item">
                         <div class="news-date">02/2026</div>
                         <div>Our paper, <strong>Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments</strong>, has been accepted to <a href="https://cvpr.thecvf.com/Conferences/2026">CVPR 2026</a>! We are releasing the first large-scale, real-world aerial dataset designed specifically for outdoor albedo-shading decomposition in the wild. Check out the <a href="https://gdaosu.github.io/olbedo/">project page</a> and <a href="https://arxiv.org/abs/2602.22025/">paper</a> for more details.</div>
@@ -661,43 +793,44 @@
 
             <div class="paper-card">
                 <div class="paper-img">
-                    <img src="images/olbedo.gif" alt="Olbedo Dataset Relighting">
+                    <img src="images/uncertainty.png" alt="Per-point uncertainty visualization for an aerial photogrammetric point cloud" loading="lazy" decoding="async">
                 </div>
                 <div class="paper-content">
-                    <a href="https://gdaosu.github.io/olbedo/" class="paper-title">Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments</a>
-                    
-                    <div class="paper-authors" style="white-space: normal; display: block; line-height: 1.4; word-wrap: break-word;">
-                        Shuang Song†, <strong>Debao Huang†</strong>, Deyan Deng, Haolin Xiong, Yang Tang, Yajie Zhao, Rongjun Qin
-                    </div>
-                    
-                    <div class="paper-venue">CVPR, 2026</div>
+                    <a href="https://arxiv.org/abs/2507.13486" class="paper-title">Uncertainty Quantification Framework for Aerial and UAV Photogrammetry through Error Propagation</a>
+                    <div class="paper-authors"><strong>Debao Huang</strong>, Rongjun Qin</div>
+                    <div class="paper-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2026</div>
                     <div class="paper-links">
-                        <a href="https://arxiv.org/abs/2602.22025"><i class="fas fa-file-pdf"></i> Paper</a>
-                        <a href="https://gdaosu.github.io/olbedo/"><i class="fas fa-globe"></i> Project Page</a>
-                        <a href="https://github.com/GDAOSU/Olbedo"><i class="fab fa-github"></i> Code</a>
-                        <a href="https://huggingface.co/spaces/GDAOSU/olbedo"><i class="fas fa-play-circle"></i> Demo</a>
-                        <a href="https://huggingface.co/GDAOSU/olbedo"><i class="fas fa-robot"></i> Models</a>
-                        <a href="https://huggingface.co/datasets/GDAOSU/Olbedo"><i class="fas fa-database"></i> Dataset</a>
+                        <a href="https://arxiv.org/abs/2507.13486"><i aria-hidden="true" class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://github.com/GDAOSU/UncertaintyQuantification"><i aria-hidden="true" class="fab fa-github"></i> Code</a>
                     </div>
                     <p class="paper-desc">
-                        We introduce Olbedo, a large-scale aerial dataset containing 5,664 UAV images for outdoor albedo-shading decomposition in the wild.
+                        This paper presents a novel, self-calibrating method to estimate the uncertainty in the MVS stage, and an uncertainty quantification framework for Aerial and UAV Photogrammetry.
                     </p>
                 </div>
             </div>
 
             <div class="paper-card">
                 <div class="paper-img">
-                    <img src="images/uncertainty.png" alt="Uncertainty">
+                    <img src="images/olbedo.gif" alt="Olbedo dataset relighting demo of an outdoor 3D scene" loading="lazy" decoding="async">
                 </div>
                 <div class="paper-content">
-                    <a href="https://arxiv.org/abs/2507.13486" class="paper-title">Uncertainty Quantification Framework for Aerial and UAV Photogrammetry through Error Propagation</a>
-                    <div class="paper-authors" style="white-space: normal; display: block; line-height: 1.4; word-wrap: break-word;"><strong>Debao Huang</strong>, Rongjun Qin</div>
-                    <div class="paper-venue">arxiv, 2025</div>
+                    <a href="https://gdaosu.github.io/olbedo/" class="paper-title">Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments</a>
+
+                    <div class="paper-authors">
+                        Shuang Song†, <strong>Debao Huang†</strong>, Deyan Deng, Haolin Xiong, Yang Tang, Yajie Zhao, Rongjun Qin
+                    </div>
+
+                    <div class="paper-venue">CVPR, 2026</div>
                     <div class="paper-links">
-                        <a href="https://arxiv.org/abs/2507.13486"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://arxiv.org/abs/2602.22025"><i aria-hidden="true" class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://gdaosu.github.io/olbedo/"><i aria-hidden="true" class="fas fa-globe"></i> Project Page</a>
+                        <a href="https://github.com/GDAOSU/Olbedo"><i aria-hidden="true" class="fab fa-github"></i> Code</a>
+                        <a href="https://huggingface.co/spaces/GDAOSU/olbedo"><i aria-hidden="true" class="fas fa-play-circle"></i> Demo</a>
+                        <a href="https://huggingface.co/GDAOSU/olbedo"><i aria-hidden="true" class="fas fa-robot"></i> Models</a>
+                        <a href="https://huggingface.co/datasets/GDAOSU/Olbedo"><i aria-hidden="true" class="fas fa-database"></i> Dataset</a>
                     </div>
                     <p class="paper-desc">
-                        This paper presents a novel, self-calibrating method to estimate the uncertainty in the MVS stage, and an uncertainty quantification framework for Aerial and UAV Photogrammetry.
+                        We introduce Olbedo, a large-scale aerial dataset containing 5,664 UAV images for outdoor albedo-shading decomposition in the wild.
                     </p>
                 </div>
             </div>
@@ -710,10 +843,10 @@
                 </div>
                 <div class="paper-content">
                     <a href="https://doi.org/10.5194/isprs-archives-XLVIII-G-2025-649-2025" class="paper-title">Dynamic Urban Scene Modeling with 3D Gaussian Splatting from UAV Full Motion Videos</a>
-                    <div class="paper-authors" style="white-space: normal; display: block; line-height: 1.4; word-wrap: break-word;"><strong>Debao Huang†</strong>, Hanyang Liu†, Ningli Xu, Rongjun Qin</div>
+                    <div class="paper-authors"><strong>Debao Huang†</strong>, Hanyang Liu†, Ningli Xu, Rongjun Qin</div>
                     <div class="paper-venue">ISPRS Archives, 2025</div>
                     <div class="paper-links">
-                        <a href="https://doi.org/10.5194/isprs-archives-XLVIII-G-2025-649-2025"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://doi.org/10.5194/isprs-archives-XLVIII-G-2025-649-2025"><i aria-hidden="true" class="fas fa-file-pdf"></i> Paper</a>
                     </div>
                     <p class="paper-desc">
                         This work presents a method for reconstructing dynamic urban scenes from UAV full-motion videos using 3D Gaussian Splatting, effectively handling moving objects in large-scale environments.
@@ -723,15 +856,15 @@
 
             <div class="paper-card">
                 <div class="paper-img">
-                    <img src="images/motion_constraint.png" alt="Motion Constraint">
+                    <img src="images/motion_constraint.png" alt="Bundle adjustment with motion constraints for ground-level multi-camera systems" loading="lazy" decoding="async">
                 </div>
                 <div class="paper-content">
                     <a href="https://doi.org/10.1016/j.isprsjprs.2024.04.023" class="paper-title">Bundle Adjustment with Motion Constraints for Uncalibrated Multi-Camera Systems at the Ground Level</a>
-                    <div class="paper-authors" style="white-space: normal; display: block; line-height: 1.4; word-wrap: break-word;"><strong>Debao Huang</strong>, Rongjun Qin, Mostafa Elhashash</div>
+                    <div class="paper-authors"><strong>Debao Huang</strong>, Rongjun Qin, Mostafa Elhashash</div>
                     <div class="paper-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2024</div>
                     <div class="paper-links">
-                        <a href="https://doi.org/10.1016/j.isprsjprs.2024.04.023"><i class="fas fa-file-pdf"></i> Paper</a>
-                        <a href="https://youtu.be/PZBTL2nrwWs"><i class="fab fa-youtube"></i> Video</a>
+                        <a href="https://doi.org/10.1016/j.isprsjprs.2024.04.023"><i aria-hidden="true" class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://youtu.be/PZBTL2nrwWs"><i aria-hidden="true" class="fab fa-youtube"></i> Video</a>
                     </div>
                     <p class="paper-desc">
                         This paper derives novel geometric constraints in BA of SfM pipeline that assumes minimal knowns about the uncalibrated multi-camera systems at the ground level. Our proposed constraints are effective in correcting topographical errors (i.e., trajectory drifts) of the reconstruction.
@@ -741,16 +874,16 @@
 
             <div class="paper-card">
                 <div class="paper-img">
-                    <img src="images/nerf.png" alt="NeRF">
+                    <img src="images/nerf.png" alt="Multi-tiling NeRF reconstruction of a large-scale aerial dataset" loading="lazy" decoding="async">
                 </div>
                 <div class="paper-content">
                     <a href="https://doi.org/10.1111/phor.12498" class="paper-title">Multi-Tiling Neural Radiance Field (NeRF)—Geometric Assessment on Large-Scale Aerial Datasets</a>
-                    <div class="paper-authors" style="white-space: normal; display: block; line-height: 1.4; word-wrap: break-word;">Ningli Xu, Rongjun Qin, <strong>Debao Huang</strong>, Fabio Remondino</div>
+                    <div class="paper-authors">Ningli Xu, Rongjun Qin, <strong>Debao Huang</strong>, Fabio Remondino</div>
                     <div class="paper-venue">The Photogrammetric Record, 2024 (<strong>Cover article of 12/2024 issue</strong>)</div>
                     <div class="paper-links">
-                        <a href="https://doi.org/10.1111/phor.12498"><i class="fas fa-file-pdf"></i> Paper</a>
-                        <a href="https://www.youtube.com/watch?v=8z3xfjRdSs8"><i class="fab fa-youtube"></i> Video</a>
-                        <a href="https://github.com/GDAOSU/multicamera_nerf"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://doi.org/10.1111/phor.12498"><i aria-hidden="true" class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://www.youtube.com/watch?v=8z3xfjRdSs8"><i aria-hidden="true" class="fab fa-youtube"></i> Video</a>
+                        <a href="https://github.com/GDAOSU/multicamera_nerf"><i aria-hidden="true" class="fab fa-github"></i> Code</a>
                     </div>
                     <p class="paper-desc">
                         This paper provides multi-camera tiling (MCT) strategy to scale the NeRF on large-scale aerial datasets and a thorough geometry assessment of NeRF.
@@ -777,7 +910,7 @@
             <div class="demo-block">
                 <div class="demo-title">2. Quantification Framework</div>
                 <p style="margin-bottom:12px; color: var(--text-light);">Estimating and encoding error covariance of 3D points, visualization in desktop GUI and VR.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="demo-grid-2">
                     <div class="video-container">
                         <video controls loop preload="metadata">
                             <source src="images/uncertainty.mp4#t=0.1" type="video/mp4">
@@ -789,17 +922,12 @@
                         </video>
                     </div>
                 </div>
-                <style>
-                    @media (max-width: 768px) {
-                        #software .demo-block > div[style*="grid"] { grid-template-columns: 1fr !important; }
-                    }
-                </style>
             </div>
 
             <div class="demo-block">
                 <div class="demo-title">3. Dynamic Urban Scene Modeling</div>
                 <p style="margin-bottom:12px; color: var(--text-light);">Dynamic 3D Gaussian Splatting from UAV full motion videos. Left: original video. Right: rendered video from a novel view.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="demo-grid-2">
                     <div class="video-container">
                         <video controls loop preload="metadata">
                             <source src="images/4dgs_ori.mp4#t=0.1" type="video/mp4">
@@ -811,11 +939,6 @@
                         </video>
                     </div>
                 </div>
-                <style>
-                    @media (max-width: 768px) {
-                        #software .demo-block > div[style*="grid"] { grid-template-columns: 1fr !important; }
-                    }
-                </style>
             </div>
             
             <div class="demo-block">
@@ -833,13 +956,15 @@
 
         <section id="hardware" class="reveal">
             <h2>Hardware</h2>
-            <div class="demo-title">1. Waterproof Stereo Camera System with Synchronized Shutter</div>
-            <div class="hardware-grid">
-                <div class="hardware-card">
-                    <img src="images/waterproof_camera1.jpeg" alt="Waterproof Camera 1">
-                </div>
-                <div class="hardware-card">
-                    <img src="images/waterproof_camera2.png" alt="Waterproof Camera 2">
+            <div class="demo-block">
+                <div class="demo-title">1. Waterproof Stereo Camera System with Synchronized Shutter</div>
+                <div class="hardware-grid">
+                    <div class="hardware-card">
+                        <img src="images/waterproof_camera1.jpeg" alt="Waterproof stereo camera system, exterior view" loading="lazy" decoding="async">
+                    </div>
+                    <div class="hardware-card">
+                        <img src="images/waterproof_camera2.png" alt="Waterproof stereo camera system with synchronized shutter, internal layout" loading="lazy" decoding="async">
+                    </div>
                 </div>
             </div>
             <div class="demo-block">
@@ -857,8 +982,8 @@
         <section id="services" class="reveal">
             <h2>Services</h2>
             
-            <div class="service-grid" style="display: flex; flex-direction: column; gap: 10px;">
-                <div class="paper-card" style="display: block; padding: 30px; height: auto;">
+            <div class="service-grid">
+                <div class="service-card">
                     <h3 style="font-size:1.3rem; margin-bottom:15px; color: var(--text-main);">Academic Services</h3>
                     <p style="margin-bottom: 15px; font-weight: 600;">I serve as a peer reviewer for:</p>
                     <ul class="service-list" style="list-style: disc;">
@@ -875,40 +1000,35 @@
                         <li>Conference on Neural Information Processing Systems (NeurIPS 2024)</li>
                     </ul>
                 </div>
-                <div class="paper-card" style="display: block; padding: 30px; height: auto;">
+                <div class="service-card">
                     <h3 style="font-size:1.3rem; margin-bottom:15px; color: var(--text-main);">Professional Services</h3>
                     <p style="margin-bottom: 15px;">
                         I am a Federal Aviation Administration (FAA) certificated remote pilot, allowing me to collect UAV data for research and commercial purposes in the US.
                         Survey missions totaling 73.4 hectares and 47.8 km of flight path since 2021.
                     </p>
-                    <div style="text-align: center;"><img src="images/liltchi.png" style="width: 100%; max-width: 500px; border-radius: 8px; box-shadow: var(--shadow-sm);" alt="Flight Map"></div>
+                    <div style="text-align: center;"><img src="images/liltchi.png" style="width: 100%; max-width: 500px; border-radius: 8px; box-shadow: var(--shadow-sm);" alt="Map of UAV survey flight paths flown since 2021" loading="lazy" decoding="async"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="visitors" class="reveal" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="visitor-card">
+                <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=300&t=m&d=iELzQL63jtQ9LGQ6qgck1nr55GLwlTUH8zbYW1ISVOw&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+
+                <div style="margin: 15px 0 10px 0; border-top: 1px solid rgba(0,0,0,0.1);"></div>
+
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                    <a href="https://hits.sh/debaohuang.github.io/" target="_blank" rel="noopener noreferrer">
+                        <img alt="Total page views" src="https://hits.sh/debaohuang.github.io.svg?style=flat-square&label=TOTAL%20VIEWS&extraCount=2445&color=2d78ad" loading="lazy" decoding="async"/>
+                    </a>
                 </div>
             </div>
         </section>
 
     </div>
 
-    <section id="visitors" class="reveal">
-        <div>
-            <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                
-                <div class="visitor-card">
-                    <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=300&t=m&d=iELzQL63jtQ9LGQ6qgck1nr55GLwlTUH8zbYW1ISVOw&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
-                    
-                    <div style="margin: 15px 0 10px 0; border-top: 1px solid rgba(0,0,0,0.1);"></div>
-
-                    <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
-                        <a href="https://hits.sh/debaohuang.github.io/" target="_blank">
-                            <img alt="Hits" src="https://hits.sh/debaohuang.github.io.svg?style=flat-square&label=TOTAL%20VIEWS&extraCount=2445&color=2d78ad"/>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-     
     <footer>
-        <p>&copy; 2026 Debao Huang. Last update: 03/05/2026</p>
+        <p>&copy; 2026 Debao Huang. Last update: 05/03/2026</p>
     </footer>
 
     <script>
@@ -980,9 +1100,10 @@
         const menuIcon = mobileMenuBtn.querySelector('i');
 
         mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            
-            if (navLinks.classList.contains('active')) {
+            const isOpen = navLinks.classList.toggle('active');
+            mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+
+            if (isOpen) {
                 menuIcon.classList.replace('fa-bars', 'fa-times');
                 navbar.style.borderRadius = '20px';
             } else {
@@ -996,6 +1117,7 @@
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
                     navLinks.classList.remove('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
                     menuIcon.classList.replace('fa-times', 'fa-bars');
                     navbar.style.borderRadius = '50px';
                 }
