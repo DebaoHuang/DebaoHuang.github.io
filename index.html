@@ -57,18 +57,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            /* Modern Tech Palette */
-            --bg-color: #f3f4f6;
-            --card-bg: rgba(255, 255, 255, 0.65); /* Glass effect base */
-            --card-border: rgba(255, 255, 255, 0.4);
+            --bg-color: #fafafa;
+            --card-bg: #ffffff;
+            --card-border: #e5e7eb;
             --text-main: #111827;
             --text-light: #4b5563;
-            --accent: #2563eb; 
+            --accent: #2563eb;
             --accent-gradient: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -78,15 +77,18 @@
 
         [data-theme="dark"] {
             --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --card-border: rgba(255, 255, 255, 0.05);
+            --card-bg: #1e293b;
+            --card-border: #334155;
             --text-main: #f8fafc;
             --text-light: #94a3b8;
             --accent: #38bdf8;
             --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
         }
 
-        :root { color-scheme: light dark; }
+        :root {
+            color-scheme: light dark;
+            --font-sans: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
 
         /* Skip-to-content link for keyboard users */
         .skip-link {
@@ -107,19 +109,11 @@
         html { scroll-behavior: smooth; }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-sans);
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
-            /* Animated Background Mesh */
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(147, 51, 234, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(236, 72, 153, 0.15) 0px, transparent 50%);
-            background-attachment: fixed;
-            background-size: 100% 100%;
         }
 
         /* Typography & Links */
@@ -157,7 +151,6 @@
             padding-right: max(24px, env(safe-area-inset-right));
         }
 
-        /* Glassmorphism Navbar */
         nav {
             position: sticky;
             top: 20px;
@@ -165,16 +158,12 @@
             margin: 0 auto;
             width: 90%;
             max-width: 1000px;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 50px;
             box-shadow: var(--shadow-md);
             transition: border-radius 0.3s ease, background 0.3s ease;
         }
-        
-        [data-theme="dark"] nav { background: rgba(15, 23, 42, 0.6); }
 
         .nav-container {
             display: flex;
@@ -185,12 +174,10 @@
         }
 
         .nav-logo {
-            font-weight: 800;
+            font-weight: 700;
             font-size: 1.1rem;
             letter-spacing: -0.5px;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-main);
         }
 
         .nav-links { 
@@ -253,7 +240,6 @@
             margin-left: 8px;
             font-size: 0.9rem;
             font-weight: 500;
-            font-family: 'Inter', sans-serif;
         }
 
         /* Scroll Reveal Animation Classes */
@@ -283,14 +269,11 @@
 
         .hero-name {
             font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
-            font-weight: 800;
+            font-weight: 700;
             line-height: 1.1;
             margin-bottom: 16px;
             letter-spacing: -1px;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-main);
         }
 
         .hero-text p { font-size: 1.05rem; margin-bottom: 16px; }
@@ -323,7 +306,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            backdrop-filter: blur(4px);
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -383,7 +365,6 @@
         .paper-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            backdrop-filter: blur(12px);
             border-radius: var(--radius);
             padding: 0;
             margin-bottom: 32px;
@@ -443,9 +424,7 @@
         }
         
         .paper-title:hover {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--accent);
         }
 
         .paper-authors {
@@ -570,7 +549,6 @@
         .service-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            backdrop-filter: blur(12px);
             border-radius: var(--radius);
             padding: 30px;
             box-shadow: var(--shadow-sm);
@@ -579,7 +557,6 @@
         .visitor-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            backdrop-filter: blur(12px);
             border-radius: var(--radius);
             padding: 24px;
             box-shadow: var(--shadow-sm);
