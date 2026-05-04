@@ -407,6 +407,22 @@
             transform: scale(1.05);
         }
 
+        .venue-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--accent);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
         .paper-content { 
             padding: 24px 28px;
             display: flex;
@@ -773,6 +789,7 @@
             <div class="paper-card">
                 <div class="paper-img">
                     <img src="images/uncertainty.png" alt="Per-point uncertainty visualization for an aerial photogrammetric point cloud" loading="lazy" decoding="async">
+                    <span class="venue-badge">ISPRS J</span>
                 </div>
                 <div class="paper-content">
                     <a href="https://arxiv.org/abs/2507.13486" class="paper-title">Uncertainty Quantification Framework for Aerial and UAV Photogrammetry through Error Propagation</a>
@@ -791,6 +808,7 @@
             <div class="paper-card">
                 <div class="paper-img">
                     <img src="images/olbedo.gif" alt="Olbedo dataset relighting demo of an outdoor 3D scene" loading="lazy" decoding="async">
+                    <span class="venue-badge">CVPR</span>
                 </div>
                 <div class="paper-content">
                     <a href="https://gdaosu.github.io/olbedo/" class="paper-title">Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments</a>
@@ -836,6 +854,7 @@
             <div class="paper-card">
                 <div class="paper-img">
                     <img src="images/motion_constraint.png" alt="Bundle adjustment with motion constraints for ground-level multi-camera systems" loading="lazy" decoding="async">
+                    <span class="venue-badge">ISPRS J</span>
                 </div>
                 <div class="paper-content">
                     <a href="https://doi.org/10.1016/j.isprsjprs.2024.04.023" class="paper-title">Bundle Adjustment with Motion Constraints for Uncalibrated Multi-Camera Systems at the Ground Level</a>
